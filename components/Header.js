@@ -1,13 +1,21 @@
-import { Row, Col } from 'reactstrap';
+import { View, Text } from 'react-native';
 
 const Header = ({playerOneScore, playerTwoScore}) => {
+    const playerOne = `Player 1 Score: ${playerOneScore}`;
+    const playerTwo = `Player 2 Score: ${playerTwoScore}`;
     return(
-        <>
-            <Row className='justify-content-between'>
-                <Col className='border text-center scoreCard' xs='3'>Player 1 Score: {playerOneScore}</Col>
-                <Col className='border text-center scoreCard' xs='3'>Player 2 Score: {playerTwoScore}</Col>
-            </Row>
-        </>
+        <View>
+            <View>
+                <Text>
+                    {playerOne}
+                </Text>
+            </View>
+            <View>
+                <Text>
+                    {playerTwo}
+                </Text>
+            </View>
+        </View>
     );
 };
 

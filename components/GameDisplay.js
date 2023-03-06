@@ -1,40 +1,41 @@
-import { Row } from "reactstrap";
+import { View, Text, Image } from "react-native";
 
 const GameDisplay = (props) => {
     let displayContent = null;
+    const scoreCount = `Current Score Count: ${props.currentScore}`;
+
+    const styles = StyleSheet.create({
+        container: {
+            paddingTop: 50,
+        },
+        dice: {
+            width: 50,
+            height: 50,
+        }
+    })
 
     if (props.startGame && props.gameWinner) {
-        displayContent = (
-            <>
-                <h2 className='text-center'>{`Player ${props.currentPlayer} WINS!`}</h2>
-            </>
-        );
+        displayContent = `Player ${props.currentPlayer} WINS!`;
     } else if (props.startGame && !props.gameWinner) { 
-        displayContent = (
-            <>
-                <h2 className='text-center'>{`Player ${props.currentPlayer} is rolling!`}</h2>
-            </>
-        );
+        displayContent = `Player ${props.currentPlayer} is rolling!`;
     } else {
-        displayContent = (
-            <>
-                <h2 className='text-center'>Welcome to Dice Roll!</h2>
-            </>
-        )
+        displayContent = 'Welcome to Dice Roll!';
     }
 
     return (
-        <>
-            <Row className='d-flex justify-content-center m-3'>
+        <View>
+            <Text style={styles.container}>
                 {displayContent}
-            </Row>
-            <Row className='d-flex justify-content-center'>
-                <img className='dice m-5' src={`../img/die_face_${props.dieFace}_T.png`} alt='die face' />
-            </Row>
-            <Row className='d-flex justify-content-center'>
-                <h4 className='text-center'>Current Score Count: {props.currentScore}</h4>
-            </Row>
-        </>
+            </Text>
+            <Text>
+                <Image 
+                    source={`../img/die_face_${props.dieFace}_T.png`}
+                    style={styles.dice} />
+            </Text>
+            <Text style={styles.container}>
+                {scoreCount}
+            </Text>
+        </View>
     );
 }
 
