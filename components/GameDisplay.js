@@ -1,12 +1,14 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 
 const GameDisplay = (props) => {
     let displayContent = null;
     const scoreCount = `Current Score Count: ${props.currentScore}`;
 
     const styles = StyleSheet.create({
-        container: {
+        scoreCard: {
             paddingTop: 50,
+            backgroundColor: '#c5b358',
+            fontSize: 16,
         },
         dice: {
             width: 50,
@@ -24,7 +26,7 @@ const GameDisplay = (props) => {
 
     return (
         <View>
-            <Text style={styles.container}>
+            <Text style={styles.scoreCard}>
                 {displayContent}
             </Text>
             <Text>
@@ -32,7 +34,7 @@ const GameDisplay = (props) => {
                     source={`../img/die_face_${props.dieFace}_T.png`}
                     style={styles.dice} />
             </Text>
-            <Text style={styles.container}>
+            <Text style={styles.scoreCard}>
                 {scoreCount}
             </Text>
         </View>

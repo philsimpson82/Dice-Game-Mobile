@@ -1,5 +1,5 @@
-import { View } from "react-native";
-import { Button } from "@rneui/themed";
+import { View, StyleSheet } from "react-native";
+import { Button, Icon } from "@rneui/themed";
 
 const GameControls = (props) => {
     let controlContent = null;
@@ -19,12 +19,28 @@ const GameControls = (props) => {
                             size='lg'
                             color='primary'
                             onClick={props.rollCalculator}
+                            icon={
+                                <Icon
+                                    name='dice'
+                                    type='font-awesome-5'
+                                    color='blue'
+                                    iconStyle={{ marginRight: 10 }}
+                                />
+                            }
                         />
                         <Button
                             title='End Turn'
                             size='lg'
                             color='secondary'
                             onClick={props.endTurn}
+                            icon={
+                                <Icon
+                                    name='stop'
+                                    type='octicon'
+                                    color='yellow'
+                                    iconStyle={{ marginRight: 10 }}
+                                />
+                            }
                         />
                     </Stack>
                 </View>
