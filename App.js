@@ -72,7 +72,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Header playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
+      <GameDisplay startGame={startGame} gameWinner={gameWinner} currentPlayer={currentPlayer} currentScore={currentScore} dieFace={dieFace} />
+      <GameControls startGame={startGame} rollCalculator={rollCalculator} newGame={newGame} endTurn={endTurn} resetGame={resetGame} />
+      <Text>Open up App.js to start working on your app!{dieFace}</Text>
       <StatusBar style="auto" />
     </View>
   );

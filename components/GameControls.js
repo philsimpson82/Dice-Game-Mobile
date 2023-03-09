@@ -13,12 +13,11 @@ const GameControls = (props) => {
         controlContent = (
             <View>
                 <View>
-                    <Stack>
                         <Button
                             title='Roll Again'
                             size='lg'
                             color='primary'
-                            onClick={props.rollCalculator}
+                            onPress={props.rollCalculator}
                             icon={
                                 <Icon
                                     name='dice'
@@ -32,7 +31,7 @@ const GameControls = (props) => {
                             title='End Turn'
                             size='lg'
                             color='secondary'
-                            onClick={props.endTurn}
+                            onPress={props.endTurn}
                             icon={
                                 <Icon
                                     name='stop'
@@ -42,14 +41,13 @@ const GameControls = (props) => {
                                 />
                             }
                         />
-                    </Stack>
                 </View>
                 <View>
                     <Button
                         title='Reset Game'
                         size='lg' 
                         color='danger' 
-                        onClick={props.resetGame}
+                        onPress={props.resetGame}
                     />
                 </View>
             </View>
@@ -61,7 +59,7 @@ const GameControls = (props) => {
                     title='Start New Game'
                     size='lg' 
                     color='success' 
-                    onClick={props.newGame}
+                    onPress={props.newGame}
                 />
             </View>
         );

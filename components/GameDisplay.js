@@ -1,20 +1,13 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image} from "react-native";
+import die_face_1 from '../assets/die_face_1_T.png';
 
 const GameDisplay = (props) => {
     let displayContent = null;
     const scoreCount = `Current Score Count: ${props.currentScore}`;
-
-    const styles = StyleSheet.create({
-        scoreCard: {
-            paddingTop: 50,
-            backgroundColor: '#c5b358',
-            fontSize: 16,
-        },
-        dice: {
-            width: 50,
-            height: 50,
-        }
-    })
+    //source={`../assets/die_face_${props.dieFace}_T.png`}
+    // <Image 
+    //                 src={'die_face_1'}
+    //             />
 
     if (props.startGame && props.gameWinner) {
         displayContent = `Player ${props.currentPlayer} WINS!`;
@@ -26,15 +19,13 @@ const GameDisplay = (props) => {
 
     return (
         <View>
-            <Text style={styles.scoreCard}>
+            <Text>
                 {displayContent}
             </Text>
             <Text>
-                <Image 
-                    source={`../img/die_face_${props.dieFace}_T.png`}
-                    style={styles.dice} />
+                
             </Text>
-            <Text style={styles.scoreCard}>
+            <Text>
                 {scoreCount}
             </Text>
         </View>
