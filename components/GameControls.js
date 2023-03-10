@@ -6,12 +6,11 @@ const GameControls = (props) => {
 
     const styles = StyleSheet.create({
         container: {},
-        dice: {}
     })
 
     if (props.startGame) {
         controlContent = (
-            <View>
+            <View style={styles.container}>
                 <View>
                         <Button
                             title='Roll Again'
@@ -54,7 +53,7 @@ const GameControls = (props) => {
         );
     } else {
         controlContent = (
-            <View>
+            <View style={styles.container}>
                 <Button
                     title='Start New Game'
                     size='lg' 

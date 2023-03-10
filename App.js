@@ -75,7 +75,6 @@ export default function App() {
       <Header playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
       <GameDisplay startGame={startGame} gameWinner={gameWinner} currentPlayer={currentPlayer} currentScore={currentScore} dieFace={dieFace} />
       <GameControls startGame={startGame} rollCalculator={rollCalculator} newGame={newGame} endTurn={endTurn} resetGame={resetGame} />
-      <Text>Open up App.js to start working on your app!{dieFace}</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -85,7 +84,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#35654d',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

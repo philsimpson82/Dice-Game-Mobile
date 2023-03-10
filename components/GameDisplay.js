@@ -39,7 +39,20 @@ const GameDisplay = (props) => {
     }
     
     const styles = StyleSheet.create({
+        container: {
+            alignItems: 'center',
+            justifyContent: 'space-evenly'
+        },
+        labelWelcome: {
+            marginVertical: 20,
+            fontSize: 36,
+        },
+        labelScore: {
+            marginVertical: 20,
+            fontSize: 22,
+        },
         dice: {
+            marginVertical: 20,
             width: 100,
             height: 100,
         }
@@ -55,17 +68,15 @@ const GameDisplay = (props) => {
     }
 
     return (
-        <View>
-            <Text>
+        <View style={styles.container}>
+            <Text style={styles.labelWelcome}>
                 {displayContent}
             </Text>
-            <Text>
-                <Image 
-                    style={styles.dice}
-                    source={dieFace}
-                />
-            </Text>
-            <Text>
+            <Image 
+                style={styles.dice}
+                source={dieFace}
+            />
+            <Text style={styles.labelScore}>
                 {scoreCount}
             </Text>
         </View>
