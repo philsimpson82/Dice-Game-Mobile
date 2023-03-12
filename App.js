@@ -72,9 +72,15 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Header playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
-      <GameDisplay startGame={startGame} gameWinner={gameWinner} currentPlayer={currentPlayer} currentScore={currentScore} dieFace={dieFace} />
-      <GameControls startGame={startGame} rollCalculator={rollCalculator} newGame={newGame} endTurn={endTurn} resetGame={resetGame} />
+      <View style={{ flex: 1 }}>
+        <Header playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
+      </View>
+      <View style={{ flex: 3 }}>
+        <GameDisplay startGame={startGame} gameWinner={gameWinner} currentPlayer={currentPlayer} currentScore={currentScore} dieFace={dieFace} />
+      </View>
+      <View style={{ flex: 2 }}>
+        <GameControls startGame={startGame} rollCalculator={rollCalculator} newGame={newGame} endTurn={endTurn} resetGame={resetGame} />
+      </View>
       <StatusBar style="auto" />
     </View>
   );

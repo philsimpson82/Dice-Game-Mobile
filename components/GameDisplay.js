@@ -38,27 +38,6 @@ const GameDisplay = (props) => {
             break;
     }
     
-    const styles = StyleSheet.create({
-        container: {
-            alignItems: 'center',
-            justifyContent: 'space-evenly'
-        },
-        labelWelcome: {
-            marginVertical: 20,
-            fontSize: 36,
-        },
-        labelScore: {
-            marginVertical: 20,
-            fontSize: 22,
-        },
-        dice: {
-            marginVertical: 20,
-            width: 100,
-            height: 100,
-        }
-    })
-    
-
     if (props.startGame && props.gameWinner) {
         displayContent = `Player ${props.currentPlayer} WINS!`;
     } else if (props.startGame && !props.gameWinner) { 
@@ -82,5 +61,25 @@ const GameDisplay = (props) => {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        justifyContent: 'space-evenly'
+    },
+    labelWelcome: {
+        marginVertical: 20,
+        fontSize: 36,
+    },
+    labelScore: {
+        marginVertical: 20,
+        fontSize: 22,
+    },
+    dice: {
+        marginVertical: 20,
+        width: 100,
+        height: 100,
+    }
+})
 
 export default GameDisplay;

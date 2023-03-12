@@ -4,14 +4,10 @@ import { Button, Icon } from "@rneui/themed";
 const GameControls = (props) => {
     let controlContent = null;
 
-    const styles = StyleSheet.create({
-        container: {},
-    })
-
     if (props.startGame) {
         controlContent = (
-            <View style={styles.container}>
-                <View>
+            <View>
+                <View style={styles.dbuttonContainer}>
                         <Button
                             title='Roll Again'
                             size='lg'
@@ -41,7 +37,7 @@ const GameControls = (props) => {
                             }
                         />
                 </View>
-                <View>
+                <View style={styles.sbuttonContainer}>
                     <Button
                         title='Reset Game'
                         size='lg' 
@@ -53,7 +49,7 @@ const GameControls = (props) => {
         );
     } else {
         controlContent = (
-            <View style={styles.container}>
+            <View style={styles.sbuttonContainer}>
                 <Button
                     title='Start New Game'
                     size='lg' 
@@ -70,5 +66,16 @@ const GameControls = (props) => {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    dbuttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 50,
+    },
+    sbuttonContainer: {
+        alignItems: 'center',
+    },
+})
 
 export default GameControls;
