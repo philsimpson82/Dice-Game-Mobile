@@ -65,15 +65,18 @@ const GameDisplay = (props) => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        flex: 1,
     },
     labelWelcome: {
         marginVertical: 20,
         fontSize: 36,
+        fontWeight: 'bold',
     },
     labelScore: {
         marginVertical: 20,
         fontSize: 22,
+        fontWeight: 'bold',
     },
     dice: {
         marginVertical: 20,

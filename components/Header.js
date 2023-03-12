@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         backgroundColor: '#c5b358',
         fontSize: 20,
+        fontWeight: 'bold',
         height: 100,
         width: 180,
     },

@@ -73,13 +73,28 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={{ flex: 1 }}>
-        <Header playerOneScore={playerOneScore} playerTwoScore={playerTwoScore}/>
+        <Header
+          playerOneScore={playerOneScore} 
+          playerTwoScore={playerTwoScore}
+        />
       </View>
       <View style={{ flex: 3 }}>
-        <GameDisplay startGame={startGame} gameWinner={gameWinner} currentPlayer={currentPlayer} currentScore={currentScore} dieFace={dieFace} />
+        <GameDisplay 
+          startGame={startGame} 
+          gameWinner={gameWinner} 
+          currentPlayer={currentPlayer} 
+          currentScore={currentScore} 
+          dieFace={dieFace}
+        />
       </View>
       <View style={{ flex: 2 }}>
-        <GameControls startGame={startGame} rollCalculator={rollCalculator} newGame={newGame} endTurn={endTurn} resetGame={resetGame} />
+        <GameControls 
+          startGame={startGame} 
+          rollCalculator={rollCalculator} 
+          newGame={newGame} 
+          endTurn={endTurn} 
+          resetGame={resetGame} 
+        />
       </View>
       <StatusBar style="auto" />
     </View>
@@ -90,5 +105,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#35654d',
+    paddingTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight
   },
 });
