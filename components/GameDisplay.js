@@ -69,12 +69,11 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     labelWelcome: {
-        marginVertical: 20,
         fontSize: 36,
         fontWeight: 'bold',
     },
     labelScore: {
-        marginVertical: 20,
+        marginVertical: 10,
         fontSize: 22,
         fontWeight: 'bold',
     },

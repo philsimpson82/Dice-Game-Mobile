@@ -11,13 +11,15 @@ const GameControls = (props) => {
                         <Button
                             title='Roll Again'
                             size='lg'
-                            color='primary'
+                            radius='md'
+                            color='green'
                             onPress={props.rollCalculator}
+                            raised
                             icon={
                                 <Icon
                                     name='dice'
                                     type='font-awesome-5'
-                                    color='blue'
+                                    color='white'
                                     iconStyle={{ marginRight: 10 }}
                                 />
                             }
@@ -25,8 +27,10 @@ const GameControls = (props) => {
                         <Button
                             title='End Turn'
                             size='lg'
-                            color='secondary'
+                            radius='md'
+                            color='red'
                             onPress={props.endTurn}
+                            raised
                             icon={
                                 <Icon
                                     name='stop'
@@ -40,9 +44,11 @@ const GameControls = (props) => {
                 <View style={styles.sbuttonContainer}>
                     <Button
                         title='Reset Game'
-                        size='lg' 
-                        color='danger' 
+                        size='lg'
+                        radius='lg'
+                        color='orange' 
                         onPress={props.resetGame}
+                        raised
                     />
                 </View>
             </View>
@@ -52,9 +58,11 @@ const GameControls = (props) => {
             <View style={styles.sbuttonContainer}>
                 <Button
                     title='Start New Game'
-                    size='lg' 
+                    size='lg'
+                    radius='lg'
                     color='success' 
                     onPress={props.newGame}
+                    raised
                 />
             </View>
         );
@@ -72,8 +80,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginBottom: 50,
+        marginHorizontal: 10,
     },
     sbuttonContainer: {
+        marginTop: 50,
         alignItems: 'center',
     },
 })

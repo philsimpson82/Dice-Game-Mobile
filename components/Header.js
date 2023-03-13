@@ -21,18 +21,16 @@ const Header = ({playerOneScore, playerTwoScore}) => {
 const styles = StyleSheet.create({
     scoreCard: {
         paddingTop: 60,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         backgroundColor: '#c5b358',
         fontSize: 20,
         fontWeight: 'bold',
         height: 100,
-        width: 180,
     },
     row: {
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
-        marginBottom: 50,
     }
 })
 
