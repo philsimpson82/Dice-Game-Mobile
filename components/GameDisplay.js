@@ -1,4 +1,5 @@
-import { View, Text, Image, StyleSheet} from "react-native";
+import { useState } from "react";
+import { Alert, View, Text, Image, StyleSheet, Modal, Pressable} from "react-native";
 import die_face_1 from '../assets/images/die_face_1_T.png';
 import die_face_2 from '../assets/images/die_face_2_T.png';
 import die_face_3 from '../assets/images/die_face_3_T.png';
@@ -8,6 +9,7 @@ import die_face_6 from '../assets/images/die_face_6_T.png';
 import die_face_7 from '../assets/images/die_face_7_T.png';
 
 const GameDisplay = (props) => {
+    const [modalVisible, setModalVisible] = useState(false);
     let displayContent = null;
     const scoreCount = `Current Score Count: ${props.currentScore}`;
     let dieFace;
@@ -48,6 +50,12 @@ const GameDisplay = (props) => {
 
     return (
         <View style={styles.container}>
+            <Modal>
+                <Text></Text>
+                <Pressable>
+                    <Text></Text>
+                </Pressable>
+            </Modal>
             <Text style={styles.labelWelcome}>
                 {displayContent}
             </Text>
