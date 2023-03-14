@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Alert, View, Text, Image, StyleSheet, Modal, Pressable} from "react-native";
 import die_face_1 from '../assets/images/die_face_1_T.png';
 import die_face_2 from '../assets/images/die_face_2_T.png';
@@ -11,6 +11,7 @@ import die_face_7 from '../assets/images/die_face_7_T.png';
 const GameDisplay = (props) => {
     const [modalVisible, setModalVisible] = useState(false);
     let displayContent = null;
+    let winnerMessage = null;
     const scoreCount = `Current Score Count: ${props.currentScore}`;
     let dieFace;
 
@@ -41,7 +42,8 @@ const GameDisplay = (props) => {
     }
     
     if (props.startGame && props.gameWinner) {
-        displayContent = `Player ${props.currentPlayer} WINS!`;
+        winnerMessage = `Player ${props.currentPlayer} WINS!`;
+        displayContent = null;
     } else if (props.startGame && !props.gameWinner) { 
         displayContent = `Player ${props.currentPlayer} is rolling!`;
     } else {
@@ -50,12 +52,27 @@ const GameDisplay = (props) => {
 
     return (
         <View style={styles.container}>
-            <Modal>
-                <Text></Text>
-                <Pressable>
-                    <Text></Text>
-                </Pressable>
-            </Modal>
+                    <Modal
+                        animationType="fade"
+                        transparent={true}
+                        visible={modalVisible}
+                        onRequestClose={() => {
+                            Alert.alert('Modal has been closed.');
+                            setModalVisible(!modalVisible);
+                        }}
+                    >
+                        <View style={styles.centeredView}>
+                            <View style={styles.modalView}>
+                                <Text style={styles.modalText}>{winnerMessage}</Text>
+                                <Pressable
+                                    style={[styles.button, styles.buttonClose]}
+                                    onPress={() => setModalVisible(!modalVisible)}
+                                >
+                                    <Text style={styles.textStyle}>Start Another Game or Go Home</Text>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </Modal>
             <Text style={styles.labelWelcome}>
                 {displayContent}
             </Text>
@@ -76,6 +93,35 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         flex: 1,
     },
+    centeredView: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 22,
+    },
+    modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+        width: 0,
+        height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    },
+    button: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+    },
+    buttonClose: {
+        backgroundColor: '#2196F3',
+    },
     labelWelcome: {
         fontSize: 36,
         fontWeight: 'bold',
@@ -89,7 +135,16 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         width: 100,
         height: 100,
-    }
+    },
+    textStyle: {
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
+    },
 })
 
 export default GameDisplay;
