@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Alert, ToastAndroid } from 'react-native';
-import { Icon, Button, Badge } from '@rneui/themed';
+import { StyleSheet, View } from 'react-native';
 import GameControls from './components/GameControls';
 import GameDisplay from './components/GameDisplay';
 import Header from './components/Header';
@@ -90,6 +89,7 @@ export default function App() {
       <View style={{ flex: 2 }}>
         <GameControls 
           startGame={startGame} 
+          gameWinner={gameWinner}
           rollCalculator={rollCalculator} 
           newGame={newGame} 
           endTurn={endTurn} 

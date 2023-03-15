@@ -4,7 +4,7 @@ import { Button, Icon } from "@rneui/themed";
 const GameControls = (props) => {
     let controlContent = null;
 
-    if (props.startGame) {
+    if (props.startGame && !props.gameWinner) {
         controlContent = (
             <View>
                 <View style={styles.dbuttonContainer}>
@@ -53,6 +53,19 @@ const GameControls = (props) => {
                 </View>
             </View>
         );
+    } else if (props.startGame && props.gameWinner) {
+        controlContent = (
+            <View style={styles.sbuttonContainer}>
+                    <Button
+                        title='New Game?'
+                        size='lg'
+                        radius='lg'
+                        color='blue' 
+                        onPress={props.resetGame}
+                        raised
+                    />
+                </View>
+        )
     } else {
         controlContent = (
             <View style={styles.sbuttonContainer}>
